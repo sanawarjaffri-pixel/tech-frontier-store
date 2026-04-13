@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
-import { SlidersHorizontal, Grid3X3, LayoutList, ChevronDown } from "lucide-react";
+import { SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
 import { products, categories } from "@/data/products";
@@ -43,7 +43,7 @@ const ShopPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="mx-auto max-w-7xl px-6 py-8 md:px-8">
       {/* Breadcrumb */}
       <div className="mb-6 text-sm text-muted-foreground">
         Home / <span className="text-foreground">Shop</span>
@@ -86,7 +86,7 @@ const ShopPage = () => {
         </aside>
 
         {/* Products */}
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           {/* Toolbar */}
           <div className="mb-6 flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3">
             <div className="flex items-center gap-2">
@@ -104,7 +104,7 @@ const ShopPage = () => {
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">Sort by:</span>
+              <span className="hidden text-sm text-muted-foreground sm:inline">Sort by:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}

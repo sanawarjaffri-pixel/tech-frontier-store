@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingCart, Heart, Search, Menu, X, ChevronDown } from "lucide-react";
+import { ShoppingCart, Heart, Search, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 
@@ -19,11 +19,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       {/* Top bar */}
       <div className="surface-dark">
-        <div className="container mx-auto flex items-center justify-between px-4 py-2 text-sm">
-          <span className="text-surface-dark-foreground/70">
+        <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-2 text-sm sm:justify-between">
+          <span className="text-center text-surface-dark-foreground/70 sm:text-left">
             Free shipping on orders over £500 | Trade accounts available
           </span>
           <div className="hidden items-center gap-4 md:flex">
@@ -41,18 +41,19 @@ const Header = () => {
       </div>
 
       {/* Main nav */}
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-2">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 shrink-0">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
             <span className="text-lg font-bold text-primary-foreground">M</span>
           </div>
-          <div>
+          <div className="hidden min-[400px]:block">
             <span className="text-xl font-bold text-foreground">Mag Traders</span>
             <span className="block text-xs text-muted-foreground">IT Hardware & Components</span>
           </div>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav - centered */}
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <Link
@@ -66,15 +67,15 @@ const Header = () => {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 shrink-0">
           {searchOpen ? (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <input
                 type="text"
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-9 w-48 rounded-md border border-input bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                className="h-9 w-36 rounded-md border border-input bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring sm:w-48"
                 autoFocus
               />
               <Button variant="ghost" size="icon" onClick={() => { setSearchOpen(false); setSearchQuery(""); }}>
@@ -113,7 +114,7 @@ const Header = () => {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="border-t border-border bg-background lg:hidden">
-          <nav className="container mx-auto flex flex-col px-4 py-4">
+          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}

@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="surface-dark">
-      <div className="container mx-auto px-4 py-16">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
@@ -45,10 +45,7 @@ const Footer = () => {
                 { name: "Contact Us", path: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-surface-dark-foreground/60 transition-colors hover:text-primary"
-                  >
+                  <Link to={link.path} className="text-sm text-surface-dark-foreground/60 transition-colors hover:text-primary">
                     {link.name}
                   </Link>
                 </li>
@@ -70,10 +67,7 @@ const Footer = () => {
                 { name: "Terms & Conditions", path: "/policies/terms" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-surface-dark-foreground/60 transition-colors hover:text-primary"
-                  >
+                  <Link to={link.path} className="text-sm text-surface-dark-foreground/60 transition-colors hover:text-primary">
                     {link.name}
                   </Link>
                 </li>
@@ -102,7 +96,6 @@ const Footer = () => {
                 <span className="text-sm text-surface-dark-foreground/60">info@magtraders.co.uk</span>
               </li>
             </ul>
-            {/* Newsletter */}
             <div className="mt-6">
               <h4 className="mb-2 text-sm font-medium text-surface-dark-foreground">Newsletter</h4>
               <div className="flex gap-2">

@@ -16,20 +16,20 @@ const HomePage = () => {
   const newProducts = products.filter((p) => p.isNew);
 
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
       {/* Hero */}
       <section className="hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(222_100%_52%/0.15),transparent_50%)]" />
-        <div className="container relative mx-auto flex min-h-[520px] flex-col items-start justify-center px-4 py-20">
+        <div className="relative mx-auto flex max-w-7xl min-h-[520px] flex-col items-start justify-center px-6 py-20 md:px-8">
           <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             UK's Trusted IT Hardware Supplier
           </span>
-          <h1 className="mb-6 max-w-2xl text-4xl font-bold leading-tight text-surface-dark-foreground md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 max-w-2xl text-3xl font-bold leading-tight text-surface-dark-foreground sm:text-4xl md:text-5xl lg:text-6xl">
             Premium Computer
             <span className="text-gradient"> Hardware </span>
             & Components
           </h1>
-          <p className="mb-8 max-w-xl text-lg text-surface-dark-foreground/60">
+          <p className="mb-8 max-w-xl text-base text-surface-dark-foreground/60 sm:text-lg">
             Enterprise-grade IT equipment for businesses and professionals.
             Graphics cards, networking, storage, and more at competitive prices.
           </p>
@@ -48,11 +48,11 @@ const HomePage = () => {
 
       {/* Features */}
       <section className="border-b border-border bg-secondary/50">
-        <div className="container mx-auto grid grid-cols-1 gap-0 px-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 sm:grid-cols-2 lg:grid-cols-4 md:px-8">
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              className={`flex items-center gap-4 px-6 py-6 ${i < 3 ? "lg:border-r lg:border-border" : ""}`}
+              className={`flex items-center gap-4 px-4 py-6 ${i < 3 ? "lg:border-r lg:border-border" : ""}`}
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                 <feature.icon className="h-6 w-6 text-primary" />
@@ -67,7 +67,7 @@ const HomePage = () => {
       </section>
 
       {/* Categories */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
         <div className="mb-10 flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold text-foreground">Shop by Category</h2>
@@ -77,7 +77,7 @@ const HomePage = () => {
             <Link to="/categories">View All <ChevronRight className="h-4 w-4" /></Link>
           </Button>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {categories.map((cat) => (
             <Link
               key={cat.id}
@@ -103,7 +103,7 @@ const HomePage = () => {
 
       {/* Featured Products */}
       <section className="bg-secondary/30 py-16">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
           <div className="mb-10 flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold text-foreground">Featured Products</h2>
@@ -122,7 +122,7 @@ const HomePage = () => {
       </section>
 
       {/* Latest Products */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
         <div className="mb-10 flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold text-foreground">Latest Arrivals</h2>
@@ -141,7 +141,7 @@ const HomePage = () => {
 
       {/* Newsletter */}
       <section className="hero-gradient py-16">
-        <div className="container mx-auto px-4 text-center">
+        <div className="mx-auto max-w-7xl px-6 text-center md:px-8">
           <h2 className="mb-3 text-2xl font-bold text-surface-dark-foreground">Stay Updated</h2>
           <p className="mb-8 text-surface-dark-foreground/60">
             Subscribe to get notified about new products and exclusive deals.
