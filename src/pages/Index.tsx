@@ -19,27 +19,28 @@ const HomePage = () => {
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
       <section className="hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(222_100%_52%/0.15),transparent_50%)]" />
-        <div className="relative mx-auto flex max-w-7xl min-h-[520px] flex-col items-start justify-center px-6 py-20 md:px-8">
-          <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+        <div className="hero-bg-animate absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(222_100%_52%/0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(222_100%_52%/0.08),transparent_50%)]" />
+        <div className="relative mx-auto flex max-w-7xl min-h-[520px] flex-col items-center justify-center px-6 py-20 text-center md:px-8">
+          <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary animate-fade-in opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
             UK's Trusted IT Hardware Supplier
           </span>
-          <h1 className="mb-6 max-w-2xl text-3xl font-bold leading-tight text-surface-dark-foreground sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 max-w-3xl text-3xl font-bold leading-tight text-surface-dark-foreground sm:text-4xl md:text-5xl lg:text-6xl animate-hero-slide-up opacity-0 [animation-delay:0.25s] [animation-fill-mode:forwards]">
             Premium Computer
             <span className="text-gradient"> Hardware </span>
             & Components
           </h1>
-          <p className="mb-8 max-w-xl text-base text-surface-dark-foreground/60 sm:text-lg">
+          <p className="mb-8 max-w-xl text-base text-surface-dark-foreground/60 sm:text-lg animate-fade-in opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
             Enterprise-grade IT equipment for businesses and professionals.
             Graphics cards, networking, storage, and more at competitive prices.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Button size="lg" asChild className="gap-2">
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-in opacity-0 [animation-delay:0.7s] [animation-fill-mode:forwards]">
+            <Button size="lg" asChild className="gap-2 transition-transform duration-200 hover:scale-105">
               <Link to="/shop">
                 Shop Now <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-surface-dark-foreground/20 bg-transparent text-surface-dark-foreground hover:bg-surface-dark-foreground/10">
+            <Button size="lg" variant="outline" asChild className="border-surface-dark-foreground/20 bg-transparent text-surface-dark-foreground hover:bg-surface-dark-foreground/10 transition-transform duration-200 hover:scale-105">
               <Link to="/categories">Browse Categories</Link>
             </Button>
           </div>
