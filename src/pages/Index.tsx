@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Truck, RotateCcw, ShieldCheck, Headphones, ArrowRight, ChevronRight } from "lucide-react";
+import { Truck, RotateCcw, ShieldCheck, Headphones, ArrowRight, ChevronRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
 import { products, categories } from "@/data/products";
