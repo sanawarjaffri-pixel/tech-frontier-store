@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="hero-gradient relative flex min-h-screen items-center overflow-hidden">
+      <section className="hero-gradient relative flex h-[calc(100vh-7rem)] min-h-[560px] items-center overflow-hidden">
         {/* Animated gradient layers */}
         <div className="hero-bg-animate absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(222_100%_52%/0.22),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(222_100%_52%/0.12),transparent_55%)]" />
@@ -61,20 +61,20 @@ const HomePage = () => {
         </div>
 
         {/* Left-aligned text content */}
-        <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:px-8 md:py-20">
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-10 md:px-8 md:py-12">
           <div className="max-w-2xl text-left">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-2 text-sm font-medium text-primary shadow-[0_0_24px_hsl(222_100%_52%/0.35)] backdrop-blur-sm animate-fade-in opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-2 text-sm font-medium text-primary shadow-[0_0_24px_hsl(222_100%_52%/0.35)] backdrop-blur-sm animate-fade-in opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
               <Sparkles className="h-3.5 w-3.5" />
               UK's Trusted IT Hardware Supplier
             </span>
-            <h1 className="mb-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-surface-dark-foreground sm:text-6xl lg:text-7xl animate-hero-slide-up opacity-0 [animation-delay:0.25s] [animation-fill-mode:forwards]">
+            <h1 className="mb-5 text-4xl font-extrabold leading-[1.05] tracking-tight text-surface-dark-foreground sm:text-5xl lg:text-6xl xl:text-7xl animate-hero-slide-up opacity-0 [animation-delay:0.25s] [animation-fill-mode:forwards]">
               Premium Computer
               <br />
               <span className="text-gradient">Hardware</span>
               <span className="text-surface-dark-foreground/90"> & </span>
               <span className="text-gradient">Components</span>
             </h1>
-            <p className="mb-10 max-w-xl text-lg text-surface-dark-foreground/70 sm:text-xl leading-[1.7] font-light animate-fade-in opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
+            <p className="mb-8 max-w-xl text-base text-surface-dark-foreground/70 sm:text-lg leading-[1.7] font-light animate-fade-in opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
               Enterprise-grade IT equipment for businesses and professionals.
               Graphics cards, networking, storage, and more at competitive prices.
             </p>
