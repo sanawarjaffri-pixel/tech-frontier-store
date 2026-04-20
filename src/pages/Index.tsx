@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="hero-gradient relative overflow-hidden">
+      <section className="hero-gradient relative flex min-h-screen items-center overflow-hidden">
         {/* Animated gradient layers */}
         <div className="hero-bg-animate absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(222_100%_52%/0.22),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(222_100%_52%/0.12),transparent_55%)]" />
@@ -61,7 +61,7 @@ const HomePage = () => {
         </div>
 
         {/* Left-aligned text content */}
-        <div className="relative mx-auto max-w-7xl px-6 py-24 md:px-8 lg:py-32">
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:px-8 md:py-20">
           <div className="max-w-2xl text-left">
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-2 text-sm font-medium text-primary shadow-[0_0_24px_hsl(222_100%_52%/0.35)] backdrop-blur-sm animate-fade-in opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
               <Sparkles className="h-3.5 w-3.5" />
