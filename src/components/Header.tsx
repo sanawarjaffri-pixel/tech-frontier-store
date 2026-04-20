@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ShoppingCart, Heart, Search, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const { cartCount, setIsCartOpen } = useCart();
@@ -43,14 +44,14 @@ const Header = () => {
       {/* Main nav */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">M</span>
-          </div>
-          <div className="hidden min-[400px]:block">
-            <span className="text-xl font-bold text-foreground">Mag Traders</span>
-            <span className="block text-xs text-muted-foreground">IT Hardware & Components</span>
-          </div>
+        <Link to="/" className="flex items-center shrink-0" aria-label="Mag Traders home">
+          <img
+            src={logo}
+            alt="Mag Traders logo"
+            className="h-9 w-auto sm:h-10 md:h-11 object-contain"
+            loading="eager"
+            decoding="async"
+          />
         </Link>
 
         {/* Desktop nav - centered */}
