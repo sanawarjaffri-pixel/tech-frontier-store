@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,13 +9,16 @@ const Footer = () => {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="mb-4 flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">M</span>
-              </div>
-              <span className="text-xl font-bold text-surface-dark-foreground">Mag Traders</span>
-            </div>
-            <p className="mb-6 text-sm leading-relaxed text-surface-dark-foreground/60">
+            <Link to="/" className="mb-4 inline-flex items-center" aria-label="Mag Traders home">
+              <img
+                src={logo}
+                alt="Mag Traders logo"
+                className="h-10 w-auto sm:h-11 object-contain brightness-0 invert"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+            <p className="mb-6 mt-4 text-sm leading-relaxed text-surface-dark-foreground/60">
               Your trusted source for quality IT hardware and computer components.
               Serving businesses and professionals across the UK.
             </p>
