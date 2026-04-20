@@ -6,7 +6,8 @@ import { useCart } from "@/context/CartContext";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
-  const { cartCount, setIsCartOpen } = useCart();
+  const { cartCount, setIsCartOpen, wishlist } = useCart();
+  const wishlistCount = wishlist.length;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -88,9 +89,14 @@ const Header = () => {
               <Search className="h-5 w-5" />
             </Button>
           )}
-          <Link to="/wishlist">
-            <Button variant="ghost" size="icon">
+          <Link to="/wishlist" aria-label="Wishlist">
+            <Button variant="ghost" size="icon" className="relative">
               <Heart className="h-5 w-5" />
+              {wishlistCount > 0 && (
+                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  {wishlistCount}
+                </span>
+              )}
             </Button>
           </Link>
           <Button variant="ghost" size="icon" className="relative" onClick={() => setIsCartOpen(true)}>
