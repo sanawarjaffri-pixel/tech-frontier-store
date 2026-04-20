@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import { Truck, RotateCcw, ShieldCheck, Headphones, ArrowRight, ChevronRight, Zap, Award, Briefcase } from "lucide-react";
+import { Truck, RotateCcw, ShieldCheck, Headphones, ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
 import { products, categories } from "@/data/products";
 import heroGpu from "@/assets/hero-gpu.png";
-import heroHdd from "@/assets/hero-hdd.png";
-import heroRouter from "@/assets/hero-router.png";
 
 const features = [
   { icon: Truck, title: "Delivery in 24h", description: "Fast UK-wide delivery on all orders" },
