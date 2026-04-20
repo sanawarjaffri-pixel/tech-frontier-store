@@ -62,26 +62,38 @@ const HomePage = () => {
 
         {/* Left-aligned text content */}
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:px-8 lg:py-32">
-          <div className="max-w-2xl text-left animate-fade-in">
-            <span className="mb-5 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+          <div className="max-w-2xl text-left">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-2 text-sm font-medium text-primary shadow-[0_0_24px_hsl(222_100%_52%/0.35)] backdrop-blur-sm animate-fade-in opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
+              <Sparkles className="h-3.5 w-3.5" />
               UK's Trusted IT Hardware Supplier
             </span>
-            <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-surface-dark-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mb-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-surface-dark-foreground sm:text-6xl lg:text-7xl animate-hero-slide-up opacity-0 [animation-delay:0.25s] [animation-fill-mode:forwards]">
               Premium Computer
-              <span className="text-gradient"> Hardware </span>
-              & Components
+              <br />
+              <span className="text-gradient">Hardware</span>
+              <span className="text-surface-dark-foreground/90"> & </span>
+              <span className="text-gradient">Components</span>
             </h1>
-            <p className="mb-8 max-w-xl text-base text-surface-dark-foreground/65 sm:text-lg leading-relaxed">
+            <p className="mb-10 max-w-xl text-lg text-surface-dark-foreground/70 sm:text-xl leading-[1.7] font-light animate-fade-in opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
               Enterprise-grade IT equipment for businesses and professionals.
               Graphics cards, networking, storage, and more at competitive prices.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" asChild className="gap-2 shadow-lg shadow-primary/30 transition-all duration-200 hover:scale-105 hover:shadow-primary/50">
+            <div className="flex flex-wrap gap-4 animate-fade-in opacity-0 [animation-delay:0.7s] [animation-fill-mode:forwards]">
+              <Button
+                size="lg"
+                asChild
+                className="gap-2 px-7 h-12 text-base font-semibold rounded-full shadow-[0_10px_30px_-5px_hsl(222_100%_52%/0.6)] transition-all duration-300 hover:scale-105 hover:shadow-[0_15px_40px_-5px_hsl(222_100%_52%/0.8)] hover:-translate-y-0.5"
+              >
                 <Link to="/shop">
                   Shop Now <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-surface-dark-foreground/20 bg-transparent text-surface-dark-foreground hover:bg-surface-dark-foreground/10 transition-all duration-200 hover:scale-105">
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="px-7 h-12 text-base font-semibold rounded-full border-surface-dark-foreground/25 bg-surface-dark-foreground/5 backdrop-blur-sm text-surface-dark-foreground hover:bg-surface-dark-foreground/15 hover:border-surface-dark-foreground/40 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+              >
                 <Link to="/categories">Browse Categories</Link>
               </Button>
             </div>
