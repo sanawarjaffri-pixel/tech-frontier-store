@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
 import { products, categories } from "@/data/products";
 import heroGpu from "@/assets/hero-gpu.png";
+import heroHdd from "@/assets/hero-hdd.png";
+import heroRouter from "@/assets/hero-router.png";
 
 const features = [
   { icon: Truck, title: "Delivery in 24h", description: "Fast UK-wide delivery on all orders" },
@@ -20,12 +22,47 @@ const HomePage = () => {
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
       <section className="hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(222_100%_52%/0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(222_100%_52%/0.1),transparent_55%)]" />
+        {/* Animated gradient layers */}
+        <div className="hero-bg-animate absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(222_100%_52%/0.22),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(222_100%_52%/0.12),transparent_55%)]" />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 md:px-8 lg:grid-cols-2 lg:gap-12 lg:py-28">
-          {/* Left: Text content */}
-          <div className="text-center lg:text-left animate-fade-in">
+        {/* Floating background hardware (right side) */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          {/* Soft glow orbs */}
+          <div className="absolute top-1/4 right-[10%] h-72 w-72 rounded-full bg-primary/20 blur-3xl animate-float-slow" />
+          <div className="absolute bottom-10 right-1/3 h-56 w-56 rounded-full bg-primary/10 blur-3xl animate-float-medium" />
+
+          {/* GPU - large, top right */}
+          <img
+            src={heroGpu}
+            alt=""
+            className="absolute -right-10 top-10 w-[44%] max-w-[520px] opacity-70 animate-float-slow drop-shadow-[0_25px_50px_hsl(222_100%_52%/0.35)] hidden md:block"
+            loading="eager"
+          />
+          {/* Router - middle right */}
+          <img
+            src={heroRouter}
+            alt=""
+            className="absolute right-[28%] bottom-8 w-[22%] max-w-[260px] opacity-60 animate-float-medium drop-shadow-[0_20px_40px_hsl(220_20%_5%/0.5)] hidden lg:block"
+            loading="lazy"
+          />
+          {/* HDD - lower right */}
+          <img
+            src={heroHdd}
+            alt=""
+            className="absolute right-[6%] bottom-6 w-[18%] max-w-[200px] opacity-65 animate-float-fast drop-shadow-[0_20px_40px_hsl(220_20%_5%/0.5)] hidden lg:block"
+            loading="lazy"
+          />
+
+          {/* Decorative floating shapes */}
+          <div className="absolute top-20 right-[55%] h-3 w-3 rounded-full bg-primary/60 animate-float-fast" />
+          <div className="absolute bottom-24 right-[48%] h-2 w-2 rounded-full bg-primary/50 animate-float-medium" />
+          <div className="absolute top-1/2 right-[40%] h-4 w-4 rotate-45 border border-primary/40 animate-float-slow" />
+        </div>
+
+        {/* Left-aligned text content */}
+        <div className="relative mx-auto max-w-7xl px-6 py-24 md:px-8 lg:py-32">
+          <div className="max-w-2xl text-left animate-fade-in">
             <span className="mb-5 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               UK's Trusted IT Hardware Supplier
             </span>
@@ -34,11 +71,11 @@ const HomePage = () => {
               <span className="text-gradient"> Hardware </span>
               & Components
             </h1>
-            <p className="mb-8 max-w-xl text-base text-surface-dark-foreground/65 sm:text-lg lg:mx-0 mx-auto leading-relaxed">
+            <p className="mb-8 max-w-xl text-base text-surface-dark-foreground/65 sm:text-lg leading-relaxed">
               Enterprise-grade IT equipment for businesses and professionals.
               Graphics cards, networking, storage, and more at competitive prices.
             </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+            <div className="flex flex-wrap gap-4">
               <Button size="lg" asChild className="gap-2 shadow-lg shadow-primary/30 transition-all duration-200 hover:scale-105 hover:shadow-primary/50">
                 <Link to="/shop">
                   Shop Now <ArrowRight className="h-4 w-4" />
@@ -48,19 +85,6 @@ const HomePage = () => {
                 <Link to="/categories">Browse Categories</Link>
               </Button>
             </div>
-          </div>
-
-          {/* Right: Hardware image */}
-          <div className="relative flex items-center justify-center h-[360px] sm:h-[440px] lg:h-[520px] animate-fade-in">
-            <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/25 blur-3xl" />
-            <img
-              src={heroGpu}
-              alt="Premium graphics card"
-              className="relative w-[88%] max-w-[520px] h-auto animate-float-slow drop-shadow-[0_30px_60px_hsl(222_100%_52%/0.35)]"
-              loading="eager"
-              width={768}
-              height={768}
-            />
           </div>
         </div>
       </section>
