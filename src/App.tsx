@@ -12,6 +12,7 @@ import Categories from "./pages/Categories";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Policies from "./pages/Policies";
+import Wishlist from "./pages/Wishlist";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/policies/:type" element={<Policies />} />
+              <Route path="/wishlist" element={<Wishlist />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
