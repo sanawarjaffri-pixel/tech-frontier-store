@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
+
+const socials = [
+  { name: "Facebook", Icon: Facebook, href: "#" },
+  { name: "Twitter", Icon: Twitter, href: "#" },
+  { name: "LinkedIn", Icon: Linkedin, href: "#" },
+  { name: "Instagram", Icon: Instagram, href: "#" },
+];
 
 const Footer = () => {
   return (
@@ -22,14 +29,15 @@ const Footer = () => {
               Your trusted source for quality IT hardware and computer components.
               Serving businesses and professionals across the UK.
             </p>
-            <div className="flex gap-3">
-              {["facebook", "twitter", "linkedin", "instagram"].map((social) => (
+            <div className="flex items-center gap-3">
+              {socials.map(({ name, Icon, href }) => (
                 <a
-                  key={social}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-dark-foreground/10 text-surface-dark-foreground/60 transition-colors hover:bg-primary hover:text-primary-foreground"
+                  key={name}
+                  href={href}
+                  aria-label={name}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-dark-foreground/10 text-surface-dark-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/30"
                 >
-                  <span className="text-xs font-bold uppercase">{social[0]}</span>
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
@@ -101,17 +109,21 @@ const Footer = () => {
               </li>
             </ul>
             <div className="mt-6">
-              <h4 className="mb-2 text-sm font-medium text-surface-dark-foreground">Newsletter</h4>
-              <div className="flex gap-2">
+              <h4 className="mb-3 text-sm font-medium text-surface-dark-foreground">Newsletter</h4>
+              <form className="flex flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="h-9 flex-1 rounded-md border border-surface-dark-foreground/20 bg-surface-dark-foreground/5 px-3 text-sm text-surface-dark-foreground placeholder:text-surface-dark-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-label="Email address"
+                  className="h-10 w-full flex-1 rounded-md border border-surface-dark-foreground/20 bg-surface-dark-foreground/5 px-3 text-sm text-surface-dark-foreground placeholder:text-surface-dark-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <button className="h-9 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+                <button
+                  type="submit"
+                  className="h-10 shrink-0 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-md hover:shadow-primary/30"
+                >
                   Subscribe
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
