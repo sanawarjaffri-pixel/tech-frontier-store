@@ -21,9 +21,9 @@ const ContactPage = () => {
           {/* Contact info */}
           <div className="space-y-6">
             {[
-              { icon: MapPin, title: "Address", lines: ["123 Tech Lane", "London, EC1A 1BB", "United Kingdom"] },
-              { icon: Phone, title: "Phone", lines: ["+44 20 7123 4567"] },
-              { icon: Mail, title: "Email", lines: ["info@magtraders.co.uk", "sales@magtraders.co.uk"] },
+              { icon: MapPin, title: "Address", lines: [, "Hazel Court, Sutton Coldfield, England, B742TU United Kingdom"] },
+              { icon: Phone, title: "Phone", lines: ["(+44) 203 608 7765"] },
+              { icon: Mail, title: "Email", lines: ["", "sales@magtraders.co.uk"] },
               { icon: Clock, title: "Business Hours", lines: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"] },
             ].map(({ icon: Icon, title, lines }) => (
               <div key={title} className="flex gap-4 rounded-lg border border-border bg-card p-4">
