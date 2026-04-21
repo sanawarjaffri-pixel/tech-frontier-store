@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-footer.png";
 
 const socials = [
   { name: "Facebook", Icon: Facebook, href: "#" },
@@ -20,7 +20,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Mag Traders logo"
-                className="h-10 w-auto sm:h-11 object-contain brightness-0 invert"
+                className="h-12 w-auto sm:h-14 object-contain"
                 loading="lazy"
                 decoding="async"
               />
