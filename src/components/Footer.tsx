@@ -128,8 +128,29 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-surface-dark-foreground/10 pt-8 text-center">
-          <p className="text-sm text-surface-dark-foreground/40">
+        <div className="mt-12 border-t border-surface-dark-foreground/10 pt-8">
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {[
+              { name: "Visa", label: "VISA", color: "text-[#1A1F71]" },
+              { name: "Mastercard", label: "MC", color: "text-[#EB001B]" },
+              { name: "PayPal", label: "PayPal", color: "text-[#003087]" },
+              { name: "American Express", label: "AMEX", color: "text-[#2E77BC]" },
+              { name: "Discover", label: "Discover", color: "text-[#FF6000]" },
+              { name: "Maestro", label: "Maestro", color: "text-[#0099DF]" },
+            ].map((pm) => (
+              <div
+                key={pm.name}
+                aria-label={pm.name}
+                title={pm.name}
+                className="flex h-8 w-12 items-center justify-center rounded-md bg-white px-2 shadow-sm transition-transform duration-300 hover:-translate-y-0.5 sm:h-9 sm:w-14"
+              >
+                <span className={`text-[10px] font-bold tracking-tight sm:text-xs ${pm.color}`}>
+                  {pm.label}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-sm text-surface-dark-foreground/40">
             © {new Date().getFullYear()} Mag Traders. All rights reserved.
           </p>
         </div>
